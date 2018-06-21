@@ -1,5 +1,7 @@
 # DanceRevolution
 
+![](https://github.com/alexg622/DanceRevolution/blob/master/images/Screen%20Shot%202018-06-21%20at%203.00.16%20PM.png?raw=true)
+
 # Background and Overview
 
 DanceRevolution is a game where users will use the up, down, left, and right arrows to follow a pattern of steps that go to the beat of the music.
@@ -64,4 +66,4 @@ DanceRevolution will use the following technologies:
 
 # Bonus Features
 - [ ] Pop up modal for a user to choose a difficulty
-- [ ] 6 different songs to choose from 
+- [ ] 6 different songs to choose from
