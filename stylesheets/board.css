@@ -77,8 +77,10 @@ p, form, fieldset, label, input, textarea, span, article, footer, time, small {
   text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
 }
 
+/* http://1.bp.blogspot.com/-MksQ-Vm6h5c/Ttxmm9V_CWI/AAAAAAAAAuA/UOPMOSrp5p8/s1600/dance-wallpaper-hd-4-734979.jpg */
+
 .background-image  {
-  background-image: url("http://1.bp.blogspot.com/-MksQ-Vm6h5c/Ttxmm9V_CWI/AAAAAAAAAuA/UOPMOSrp5p8/s1600/dance-wallpaper-hd-4-734979.jpg");
+  background-image: url("https://github.com/alexg622/DanceRevolution/blob/master/images/dance-wallpaper-hd-4-734979.jpg?raw=true");
   width: 950px;
   height: 700px;
   border: 4px solid red;
@@ -141,7 +143,7 @@ p, form, fieldset, label, input, textarea, span, article, footer, time, small {
   color: red;
 }
 .padit {
-  padding-right: 45%; 
+  padding-right: 45%;
 }
 .github {
   /* align-self: flex-start; */
