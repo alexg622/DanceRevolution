@@ -139,6 +139,7 @@ function playPause() {
     audio.play();
     playbtn.className = "far fa-pause-circle fa-2x"
     document.querySelector(".how-to-play").remove();
+    document.querySelector(".up-down-left-right-arrows").style.height = "700px"
     startingTime = performance.now()
     requestAnimationFrame(easyCallback)
     fallArrow();
@@ -396,7 +397,7 @@ function easyCallback(timeStep) {
 
 document.getElementById("normal").addEventListener("click", ()  => {
   document.querySelector(".how-to-play").remove();
-  document.querySelector(".up-down-left-right-arrows").style.height = "700px" 
+  document.querySelector(".up-down-left-right-arrows").style.height = "700px"
   audio.play();
   playbtn.className = "far fa-pause-circle fa-2x"
   // clock(arrows);
