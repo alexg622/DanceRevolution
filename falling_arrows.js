@@ -1,7 +1,7 @@
 // __________________________________________________________
 document.addEventListener("DOMContentLoaded", () => {
   playbtn.addEventListener("click", playPause);
-  initAudio(audio);
+  // initAudio(audio);
   document.onkeydown = checkKey;
   document.onkeyup = upKey;
 })
@@ -152,9 +152,9 @@ function playPause() {
 }
 
 
-// function initAudio(audio){
-//   audio.play()
-// }
+function initAudio(audio){
+  audio.play()
+}
 
 
 
