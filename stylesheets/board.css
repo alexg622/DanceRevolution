@@ -87,6 +87,49 @@ p, form, fieldset, label, input, textarea, span, article, footer, time, small {
   justify-content: center;
 }
 
+.how-to-play {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* color: red; */
+}
+
+.how-to-play p {
+  margin-top: 5%;
+  color: #fff;
+  font-family: "Museo";
+  font-size: 20px;
+  text-shadow: 0 0 10px lightblue, 0 0 20px lightblue, 0 0 30px lightblue, 0 0 40px blue, 0 0 70px blue, 0 0 80px blue, 0 0 100px blue, 0 0 150px blue;
+  flex-wrap: wrap;
+  align-self: center;
+  text-align: center;
+  display: flex;
+}
+
+.how-to-play h1 {
+  margin-top: 10%;
+  font-family: "Museo";
+  font-size: 100px;
+  color: #fff;
+  background: blue;
+  border-radius: 10px;
+  padding: 10px 10px;
+  text-shadow: 0 0 10px lightblue, 0 0 20px lightblue, 0 0 30px lightblue, 0 0 40px blue, 0 0 70px blue, 0 0 80px blue, 0 0 100px blue, 0 0 150px blue;
+}
+
+.how-to-play h1:hover {
+  box-shadow: 0px 0px 40px lightblue;
+  transition: 300;
+}
+
+.title {
+  font-family: "Museo";
+  font-size: 100px;
+  color: #fff;
+  text-shadow: 0 0 10px lightblue, 0 0 20px lightblue, 0 0 30px lightblue, 0 0 40px blue, 0 0 70px blue, 0 0 80px blue, 0 0 100px blue, 0 0 150px blue;
+}
+
 .info {
   align-self: center;
   display: flex;
@@ -101,12 +144,23 @@ p, form, fieldset, label, input, textarea, span, article, footer, time, small {
   text-transform: uppercase;
   color: #fff;
   text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
-  width: 150px; 
+  width: 150px;
 }
 
 .left {
-  text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red, 0 0 70px red, 0 0 80px red, 0 0 100px red, 0 0 150px red;
+  text-shadow: 0 0 20px yellow
+}
 
+.right {
+  text-shadow: 0 0 20px lightgreen
+}
+
+.down {
+  text-shadow: 0 0 20px lightblue
+}
+
+.up {
+  text-shadow: 0 0 20px red
 }
 
 /* .points {
@@ -118,10 +172,10 @@ p, form, fieldset, label, input, textarea, span, article, footer, time, small {
   text-shadow: 0 0 20px #fefcc9, 10px -10px 30px #feec85, -20px -20px 40px #ffae34, 20px -40px 50px #ec760c, -20px -60px 60px #cd4606, 0 -80px 70px #973716, 10px -90px 80px #451b0e;
 } */
 
-.how-to-play {
+/* .how-to-play {
   color: red;
   flex-wrap: wrap;
-}
+} */
 
 
 .arrows {
