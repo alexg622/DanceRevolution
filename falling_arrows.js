@@ -204,7 +204,7 @@ let hardArrows = {}
 let easyCounter = 7
 let easyArrows = {}
 
-for (i=7; i<390; i++) {
+for (i=7; i<385; i++) {
 
 
   easyArrows[easyCounter] = [
