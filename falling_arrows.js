@@ -7,9 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 
-let gotIt = ["625px", "626px", "627px", "628px", "629px", "630px", "631px", "632px", "633px", "634px", "635px", "636px", "637px", "638px",
+let gotIt = ["620px", "621px", "622px", "623px", "624px", "625px", "626px", "627px", "628px", "629px", "630px", "631px", "632px", "633px", "634px", "635px", "636px", "637px", "638px",
 "639px", "640px", "641px", "642px", "643px", "644px", "645px", "646px", "647px", "648px", "649px", "650px", "651px", "652px", "653px",
-"654px", "655px", "656px", "657px", "658px", "659px", "660px"]
+"654px", "655px", "656px", "657px", "658px", "659px", "660px", "661px", "662px", "663px", "664px", "665px", "666px", "667px", "668px", "669px", "670px"]
 let points = 0
 
 function checkKey(e) {
@@ -302,7 +302,7 @@ function hardCallback(timeStep) {
     boolean = false
   }
   if (boolean === false && decimals > 1-margin) {
-    console.log(time);
+    // console.log(time);
     boolean = true
     if(hardArrows[time] !== undefined) {
       newEl = document.createElement(hardArrows[time].element)
@@ -354,7 +354,7 @@ function easyCallback(timeStep) {
     boolean = false
   }
   if (boolean === false && decimals > 1-margin) {
-    console.log(time);
+    // console.log(time);
     boolean = true
     if(easyArrows[time] !== undefined) {
       newEl = document.createElement(easyArrows[time].element)
@@ -396,6 +396,7 @@ function easyCallback(timeStep) {
 
 document.getElementById("normal").addEventListener("click", ()  => {
   document.querySelector(".how-to-play").remove();
+  document.querySelector(".up-down-left-right-arrows").style.height = "700px" 
   audio.play();
   playbtn.className = "far fa-pause-circle fa-2x"
   // clock(arrows);
@@ -408,6 +409,7 @@ document.getElementById("normal").addEventListener("click", ()  => {
 
 document.getElementById("expert").addEventListener("click", ()  => {
   document.querySelector(".how-to-play").remove();
+  document.querySelector(".up-down-left-right-arrows").style.height = "700px"
   audio.play();
   playbtn.className = "far fa-pause-circle fa-2x"
   // clock(arrows);

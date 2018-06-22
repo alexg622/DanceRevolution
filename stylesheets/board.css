@@ -85,7 +85,7 @@ p, form, fieldset, label, input, textarea, span, article, footer, time, small {
   box-shadow: 0px 0px 40px red;
   display: flex;
   justify-content: center;
-  object-fit: cover; 
+  object-fit: cover;
 }
 
 .how-to-play {
@@ -136,6 +136,27 @@ p, form, fieldset, label, input, textarea, span, article, footer, time, small {
   justify-content: center;
 }
 
+#space {
+  font-size: 32px;
+  color: red;
+}
+.padit {
+  padding-right: 45%; 
+}
+.github {
+  /* align-self: flex-start; */
+  color: #fff;
+  text-shadow: 0 0 10px lightblue, 0 0 20px lightblue, 0 0 30px lightblue, 0 0 40px blue, 0 0 70px blue, 0 0 80px blue, 0 0 100px blue, 0 0 150px blue;
+  padding-right: 5%;
+}
+.linkedin {
+  color: #fff;
+  text-shadow: 0 0 10px lightblue, 0 0 20px lightblue, 0 0 30px lightblue, 0 0 40px blue, 0 0 70px blue, 0 0 80px blue, 0 0 100px blue, 0 0 150px blue;
+}
+
+.links {
+  display: flex;
+}
 
 #normal:hover {
   box-shadow: 0px 0px 40px lightblue;
@@ -209,7 +230,7 @@ p, form, fieldset, label, input, textarea, span, article, footer, time, small {
   display: flex;
   justify-content: column;
   align-items: flex-end;
-  height: 700px;
+  height: 0px;
 }
 
 .fas {
