@@ -1,9 +1,3 @@
-// document.addEventListener("DOMContentLoaded" () => {
-//   let rightArrow = document.getElementById("appended-right");
-//   let leftArrow = document.getElementById("appended-left");
-//   fallArrow(leftArrow)
-//   fallArrow(rightArrow)
-// })
 // __________________________________________________________
 document.addEventListener("DOMContentLoaded", () => {
   playbtn.addEventListener("click", playPause);
@@ -144,9 +138,6 @@ function playPause() {
   if(audio.paused) {
     audio.play();
     playbtn.className = "far fa-pause-circle fa-2x"
-    // clock(arrows);
-    // animations()
-    // run(arrows)
     document.querySelector(".how-to-play").remove();
     startingTime = performance.now()
     requestAnimationFrame(easyCallback)
@@ -154,8 +145,8 @@ function playPause() {
   } else {
     audio.pause();
     playbtn.className = "fab fa-youtube fa-2x"
-    clearInterval(fallArrowInterval)
-    clearInterval(clockArrows)
+    // clearInterval(fallArrowInterval)
+    // clearInterval(clockArrows)
   }
 }
 
@@ -168,97 +159,89 @@ function initAudio(audio){
 
 // __________________________________________________________
 
-// function hardArrows () {
-//   let counter = 15
-//   let arrows = {}
-//
-//   for (i=15; i<800; i++) {
-//
-//
-//     arrows[counter] = [
-//       {
-//         element: 'I',
-//         elClass: 'appended left fas fa-arrow-left fa-3x six',
-//         direction: "left",
-//         color: "yellow"
-//       },
-//       {
-//         element: 'I',
-//         elClass: 'appended right fas fa-arrow-right fa-3x six',
-//         direction: "right",
-//         color: "purple"
-//       },
-//       {
-//         element: 'I',
-//         elClass: 'appended up fas fa-arrow-up fa-3x four',
-//         direction: "up",
-//         color: "red"
-//       },
-//       {
-//         element: 'I',
-//         elClass: 'appended down fas fa-arrow-down fa-3x fifteen',
-//         direction: "down",
-//         color: "blue"
-//       }
-//     ][Math.floor((Math.random() * 3) + 0)]
-//
-//
-//
-//     // if (i % [3, 16, 8, 32][Math.floor(Math.random() * 3) + 0] === 0) {
-//     //   counter += 2
-//     // } else {
-//     //   counter += 1
-//     // }
-//     counter += 1
-//   }
-//
-//
-// }
+let hardCounter = 15
+let hardArrows = {}
 
-
-
-
-  let easyCounter = 7
-  let easyArrows = {}
-
-  for (i=7; i<500; i++) {
-
-
-    easyArrows[easyCounter] = [
+  for (i=15; i<800; i++) {
+    hardArrows[hardCounter] = [
       {
-        element: 'I',
-        elClass: 'appended left fas fa-arrow-left fa-3x six',
-        direction: "left",
-        color: "yellow"
+      element: 'I',
+      elClass: 'appended left fas fa-arrow-left fa-3x six',
+      direction: "left",
+      color: "yellow"
       },
       {
-        element: 'I',
-        elClass: 'appended right fas fa-arrow-right fa-3x six',
-        direction: "right",
-        color: "lightgreen"
+      element: 'I',
+      elClass: 'appended right fas fa-arrow-right fa-3x six',
+      direction: "right",
+      color: "lightgreen"
       },
       {
-        element: 'I',
-        elClass: 'appended up fas fa-arrow-up fa-3x four',
-        direction: "up",
-        color: "red"
+      element: 'I',
+      elClass: 'appended up fas fa-arrow-up fa-3x four',
+      direction: "up",
+      color: "red"
       },
       {
-        element: 'I',
-        elClass: 'appended down fas fa-arrow-down fa-3x fifteen',
-        direction: "down",
-        color: "lightblue"
+      element: 'I',
+      elClass: 'appended down fas fa-arrow-down fa-3x fifteen',
+      direction: "down",
+      color: "lightblue"
       }
     ][Math.floor((Math.random() * 3) + 0)]
-
-
-
-    if (i % [32, 8, 6, 64][Math.floor(Math.random() * 1) + 0] === 0) {
-      easyCounter += 2
-    } else {
-      easyCounter += 1
-    }
+    // if (i % [3, 16, 8, 32][Math.floor(Math.random() * 3) + 0] === 0) {
+    //   counter += 2
+    // } else {
+    //   counter += 1
+    // }
+    hardCounter += 1
   }
+
+
+
+
+
+let easyCounter = 7
+let easyArrows = {}
+
+for (i=7; i<390; i++) {
+
+
+  easyArrows[easyCounter] = [
+    {
+    element: 'I',
+    elClass: 'appended left fas fa-arrow-left fa-3x six',
+    direction: "left",
+    color: "yellow"
+    },
+    {
+    element: 'I',
+    elClass: 'appended right fas fa-arrow-right fa-3x six',
+    direction: "right",
+    color: "lightgreen"
+    },
+    {
+    element: 'I',
+    elClass: 'appended up fas fa-arrow-up fa-3x four',
+    direction: "up",
+    color: "red"
+    },
+    {
+    element: 'I',
+    elClass: 'appended down fas fa-arrow-down fa-3x fifteen',
+    direction: "down",
+    color: "lightblue"
+    }
+  ][Math.floor((Math.random() * 3) + 0)]
+
+
+
+  if (i % [32, 8, 6, 64][Math.floor(Math.random() * 1) + 0] === 0) {
+    easyCounter += 2
+  } else {
+    easyCounter += 1
+  }
+}
 
 
 
@@ -321,41 +304,36 @@ function hardCallback(timeStep) {
   if (boolean === false && decimals > 1-margin) {
     console.log(time);
     boolean = true
-    if(arrows[time] !== undefined) {
-      newEl = document.createElement(arrows[time].element)
-      if(arrows[time].direction === "left") {
-        newEl.className = arrows[time].elClass
+    if(hardArrows[time] !== undefined) {
+      newEl = document.createElement(hardArrows[time].element)
+      if(hardArrows[time].direction === "left") {
+        newEl.className = hardArrows[time].elClass
         newEl.removeAttribute("style")
         newEl.style.top = "0px"
         newEl.style.left = "0px"
         newEl.style.position = "absolute"
-        newEl.style.color = arrows[time].color
-        newEl.style.textShadow = `0 0 10px ${arrows[time].color}, 0 0 20px ${arrows[time].color}, 0 0 30px ${arrows[time].color}, 0 0 40px ${arrows[time].color}, 0 0 70px ${arrows[time].color}, 0 0 80px ${arrows[time].color}, 0 0 100px ${arrows[time].color}, 0 0 150px ${arrows[time].color};`
-
-      } else if (arrows[time].direction === "right") {
-        newEl.className = arrows[time].elClass
+        newEl.style.color = hardArrows[time].color
+      } else if (hardArrows[time].direction === "right") {
+        newEl.className = hardArrows[time].elClass
         newEl.removeAttribute("style")
         newEl.style.top = "0px"
         newEl.style.right = "0px"
         newEl.style.position = "absolute"
-        newEl.style.color = arrows[time].color
-        newEl.style.textShadow = `0 0 10px ${arrows[time].color}, 0 0 20px ${arrows[time].color}, 0 0 30px ${arrows[time].color}, 0 0 40px ${arrows[time].color}, 0 0 70px ${arrows[time].color}, 0 0 80px ${arrows[time].color}, 0 0 100px ${arrows[time].color}, 0 0 150px ${arrows[time].color};`
-      } else if (arrows[time].direction === "up") {
-        newEl.className = arrows[time].elClass
+        newEl.style.color = hardArrows[time].color
+      } else if (hardArrows[time].direction === "up") {
+        newEl.className = hardArrows[time].elClass
         newEl.removeAttribute("style")
         newEl.style.top = "0px"
         newEl.style.left = "42px"
         newEl.style.position = "absolute"
-        newEl.style.color = arrows[time].color
-        newEl.style.textShadow = `0 0 10px ${arrows[time].color}, 0 0 20px ${arrows[time].color}, 0 0 30px ${arrows[time].color}, 0 0 40px ${arrows[time].color}, 0 0 70px ${arrows[time].color}, 0 0 80px ${arrows[time].color}, 0 0 100px ${arrows[time].color}, 0 0 150px ${arrows[time].color};`
-      } else if (arrows[time].direction === "down") {
-        newEl.className = arrows[time].elClass
+        newEl.style.color = hardArrows[time].color
+      } else if (hardArrows[time].direction === "down") {
+        newEl.className = hardArrows[time].elClass
         newEl.removeAttribute("style")
         newEl.style.top = "0px"
         newEl.style.right = "42px"
         newEl.style.position = "absolute"
-        newEl.style.color = arrows[time].color
-        newEl.style.textShadow = `0 0 10px ${arrows[time].color}, 0 0 20px ${arrows[time].color}, 0 0 30px ${arrows[time].color}, 0 0 40px ${arrows[time].color}, 0 0 70px ${arrows[time].color}, 0 0 80px ${arrows[time].color}, 0 0 100px ${arrows[time].color}, 0 0 150px ${arrows[time].color};`
+        newEl.style.color = hardArrows[time].color
       }
       document.querySelector(".arrows").innerHTML += newEl.outerHTML
     }
@@ -425,5 +403,17 @@ document.getElementById("normal").addEventListener("click", ()  => {
   // run(arrows)
   startingTime = performance.now()
   requestAnimationFrame(easyCallback)
+  fallArrow();
+})
+
+document.getElementById("expert").addEventListener("click", ()  => {
+  document.querySelector(".how-to-play").remove();
+  audio.play();
+  playbtn.className = "far fa-pause-circle fa-2x"
+  // clock(arrows);
+  // animations()
+  // run(arrows)
+  startingTime = performance.now()
+  requestAnimationFrame(hardCallback)
   fallArrow();
 })
