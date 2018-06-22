@@ -143,7 +143,7 @@ p, form, fieldset, label, input, textarea, span, article, footer, time, small {
   color: red;
 }
 .padit {
-  padding-right: 45%;
+  padding-right: 50px;
 }
 .github {
   /* align-self: flex-start; */
