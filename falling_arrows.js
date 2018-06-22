@@ -152,9 +152,9 @@ function playPause() {
 }
 
 
-function initAudio(audio){
-  audio.play()
-}
+// function initAudio(audio){
+//   audio.play()
+// }
 
 
 
