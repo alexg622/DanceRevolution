@@ -18,4 +18,8 @@ Once the game starts the user has to catch the falling arrows in sync with the m
 
 # Challenges
 
+![](https://github.com/alexg622/DanceRevolution/blob/master/images/CodeSnippet.png?raw=true)
+
+![](https://github.com/alexg622/DanceRevolution/blob/master/images/secondCodeSnippet.png?raw=true)
+
 Some challenges in creating this game were devising an algorithm to keep track of the beats in the song since setInterval would not keep accurate time. I also created a function to generated random arrows at specific time signatures to make each play different and unique.
