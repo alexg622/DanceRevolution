@@ -6,6 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
   document.onkeyup = upKey;
 })
 
+let playing = false
+let first_press = false
+
 
 let gotIt = ["620px", "621px", "622px", "623px", "624px", "625px", "626px", "627px", "628px", "629px", "630px", "631px", "632px", "633px", "634px", "635px", "636px", "637px", "638px",
 "639px", "640px", "641px", "642px", "643px", "644px", "645px", "646px", "647px", "648px", "649px", "650px", "651px", "652px", "653px",
@@ -27,7 +30,7 @@ function checkKey(e) {
           if (upArrows[k].style !== undefined) {
             if (gotIt.includes(upArrows[k].style.top)) {
               points += 10
-              document.querySelector(".points").innerText = `Points: ${points}`
+              document.querySelector(".the-points").innerText = `Points: ${points}`
               upArrows[k].remove()
             }
           }
@@ -45,7 +48,7 @@ function checkKey(e) {
           if (downArrows[k].style !== undefined) {
             if (gotIt.includes(downArrows[k].style.top)) {
               points += 10
-              document.querySelector(".points").innerText = `Points: ${points}`
+              document.querySelector(".the-points").innerText = `Points: ${points}`
               downArrows[k].remove()
             }
           }
@@ -64,7 +67,7 @@ function checkKey(e) {
          if (leftArrows[k].style !== undefined) {
            if (gotIt.includes(leftArrows[k].style.top)) {
              points += 10
-             document.querySelector(".points").innerText = `Points: ${points}`
+             document.querySelector(".the-points").innerText = `Points: ${points}`
              leftArrows[k].remove()
            }
          }
@@ -82,7 +85,7 @@ function checkKey(e) {
          if (rightArrows[k].style !== undefined) {
            if (gotIt.includes(rightArrows[k].style.top)) {
              points += 10
-             document.querySelector(".points").innerText = `Points: ${points}`
+             document.querySelector(".the-points").innerText = `Points: ${points}`
              rightArrows[k].remove()
            }
          }
@@ -136,14 +139,21 @@ let mutebtn = document.querySelector(".fa-pause-circle");
 
 function playPause() {
   if(audio.paused) {
+    console.log("this is playing", playing);
+    playing = true
     audio.play();
     playbtn.className = "far fa-pause-circle fa-2x"
-    document.querySelector(".how-to-play").remove();
-    document.querySelector(".up-down-left-right-arrows").style.height = "700px"
+    if (first_press === false) {
+      first_press = true
+      document.querySelector(".how-to-play").remove();
+      document.querySelector(".up-down-left-right-arrows").style.height = "700px"
+      fallArrow();
+    }
     startingTime = performance.now()
     requestAnimationFrame(easyCallback)
-    fallArrow();
   } else {
+    console.log(playing, "in pause");
+    playing = false
     audio.pause();
     playbtn.className = "fab fa-youtube fa-2x"
     // clearInterval(fallArrowInterval)
@@ -264,6 +274,9 @@ function getTopOfEl(element){
 let fallArrowInterval
 function fallArrow() {
   fallArrowInterval = setInterval(function(){
+    if (playing === false) {
+      return
+    }
     let allArrows = document.getElementsByClassName("appended")
       for (k in allArrows) {
         let addNum = getTopOfEl(allArrows[k])
@@ -346,6 +359,10 @@ function hardCallback(timeStep) {
 
 
 function easyCallback(timeStep) {
+  console.log(playing, "easy function");
+  if (playing === false) {
+    return
+  }
   let curr_time = performance.now()
   let diff = curr_time - startingTime
   let currBeat = diff / easy
@@ -396,8 +413,13 @@ function easyCallback(timeStep) {
 }
 
 document.getElementById("normal").addEventListener("click", ()  => {
-  document.querySelector(".how-to-play").remove();
-  document.querySelector(".up-down-left-right-arrows").style.height = "700px"
+  if (first_press === false) {
+    first_press = true
+    document.querySelector(".how-to-play").remove();
+    document.querySelector(".up-down-left-right-arrows").style.height = "700px"
+    fallArrow();
+  }
+  playing = true
   audio.play();
   playbtn.className = "far fa-pause-circle fa-2x"
   // clock(arrows);
@@ -405,12 +427,16 @@ document.getElementById("normal").addEventListener("click", ()  => {
   // run(arrows)
   startingTime = performance.now()
   requestAnimationFrame(easyCallback)
-  fallArrow();
 })
 
 document.getElementById("expert").addEventListener("click", ()  => {
-  document.querySelector(".how-to-play").remove();
-  document.querySelector(".up-down-left-right-arrows").style.height = "700px"
+  if (first_press === false) {
+    first_press = true 
+    document.querySelector(".how-to-play").remove();
+    document.querySelector(".up-down-left-right-arrows").style.height = "700px"
+    fallArrow();
+  }
+  playing = true
   audio.play();
   playbtn.className = "far fa-pause-circle fa-2x"
   // clock(arrows);
@@ -418,5 +444,4 @@ document.getElementById("expert").addEventListener("click", ()  => {
   // run(arrows)
   startingTime = performance.now()
   requestAnimationFrame(hardCallback)
-  fallArrow();
 })
