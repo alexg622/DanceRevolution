@@ -139,7 +139,6 @@ let mutebtn = document.querySelector(".fa-pause-circle");
 
 function playPause() {
   if(audio.paused) {
-    console.log("this is playing", playing);
     playing = true
     audio.play();
     playbtn.className = "far fa-pause-circle fa-2x"
@@ -152,7 +151,6 @@ function playPause() {
     startingTime = performance.now()
     requestAnimationFrame(easyCallback)
   } else {
-    console.log(playing, "in pause");
     playing = false
     audio.pause();
     playbtn.className = "fab fa-youtube fa-2x"
@@ -359,7 +357,6 @@ function hardCallback(timeStep) {
 
 
 function easyCallback(timeStep) {
-  console.log(playing, "easy function");
   if (playing === false) {
     return
   }
@@ -431,7 +428,7 @@ document.getElementById("normal").addEventListener("click", ()  => {
 
 document.getElementById("expert").addEventListener("click", ()  => {
   if (first_press === false) {
-    first_press = true 
+    first_press = true
     document.querySelector(".how-to-play").remove();
     document.querySelector(".up-down-left-right-arrows").style.height = "700px"
     fallArrow();
